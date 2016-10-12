@@ -18,7 +18,7 @@
 	<div class="main-wrap">
 		<div class="top-banner">
 			<!-- Swiper -->
-		    <div class="swiper-container">
+		    <div class="swiper-container top-banner-swiper">
 		        <ul class="swiper-wrapper">
 		            <li class="swiper-slide"><img src="./img/slider_eg.jpg" /></li>
 		            <li class="swiper-slide"><img src="./img/slider_eg.jpg" /></li>
@@ -44,19 +44,98 @@
 		<!-- top-menu end -->
 
 		<!-- lives list -->
-		<div class="live-wrap"></div>
+		<div class="live-wrap">
+			<div class="lw-title"><span class="dib mark"></span><span class="dib font">直播动态</span></div>
+			<div class="swiper-container video-swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide onplay">
+		            	<img class="live-cover" src="./img/adv_eg.jpg" />
+						<div class="play-mask"></div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<img class="live-cover" src="./img/adv_eg.jpg" />
+						<div class="timeout-block" lasttime="50000"></div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<img class="live-cover" src="./img/adv_eg.jpg" />
+						<div class="timeout-block" lasttime="50000"></div>
+		            </div>
+		            <div class="swiper-slide">
+		            	<img class="live-cover" src="./img/adv_eg.jpg" />
+						<div class="timeout-block" lasttime="50000"></div>
+		            </div>
+		        </div>
+		        <!-- Add Pagination -->
+		        <div class="swiper-pagination"></div>
+		    </div>
+		</div>
 		<!-- lives list end -->
 
 	</div>
 	<script type="text/javascript" src= "./js/zepto.min.js"></script>
 	<script type="text/javascript" src= "./js/swiper-3.3.1.min.js"></script>
 	<script>
+	var curDate = new Date();
+	var timer={};
 	$(function(){
-		var swiper = new Swiper('.swiper-container', {
+		var swiper = new Swiper('.top-banner-swiper', {
 	        pagination: '.swiper-pagination',
 	        paginationClickable: true
 	    });
+
+	    var swiperVideo = new Swiper('.video-swiper-container', {
+	    	pagination: '.swiper-pagination',
+	        slidesPerView: 'auto',
+	        paginationClickable: true,
+	        spaceBetween: 30
+	    });
+
+	    daojishi()
 	})
+
+	/*倒计时*/
+	function formatSeconds(value) {
+	    var theTime = parseInt(value);// 秒
+	    var theTime1 = 0;// 分
+	    var theTime2 = 0;// 小时
+	    if(theTime > 60) {
+	        theTime1 = parseInt(theTime/60);
+	        theTime = parseInt(theTime%60);
+	            if(theTime1 > 60) {
+	            theTime2 = parseInt(theTime1/60);
+	            theTime1 = parseInt(theTime1%60);
+	        }
+	    }
+	        var result = ""+parseInt(theTime)+"秒";
+	        if(theTime1 > 0) {
+	            result = ""+parseInt(theTime1)+"分"+result;
+	        }
+	        if(theTime2 > 0 && theTime2 < 24) {
+	            result = ""+parseInt(theTime2)+"小时"+result;
+	        }else if(theTime2 > 0 && theTime2 >= 24){
+	            result = "" +parseInt(theTime2/24) + "天" + parseInt(theTime2%24) + "小时"+result;
+	        }
+	    return result;
+	}
+
+	function daojishi(){
+		timer = setInterval(function(){
+			var tmpDate = new Date();
+			$('[lasttime]').each(function(){
+				var restsecond = $(this).attr('lasttime');
+				var restNow = parseInt((restsecond * 1000  - (tmpDate - curDate))/1000);
+				//console.log(restNow);
+				if(restNow < 0){
+					restNow = 0;
+					$('.rest-time').addClass('hide');
+					$('.js-search-bottle').attr('canthrow','1');
+				}else{
+					$(this).html(formatSeconds(restNow))
+					$('.js-search-bottle').attr('canthrow','0');
+				}
+			})
+		},1000)
+	}
 	</script>
 </body>
 </html>
