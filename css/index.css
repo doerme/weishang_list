@@ -1,0 +1,83 @@
+body{
+	width:100%;
+}
+
+
+.dib{ display: inline-block; vertical-align: middle;}
+.hide,.shide{ display:none;}
+
+.main-wrap{
+	background: #f0f0f0;
+	overflow: hidden;
+}
+
+.top-banner{
+	position: relative;
+	height: 4.933333rem;
+	overflow: hidden;
+}
+
+.top-banner .swiper-pagination{
+	text-indent: 7.3rem;
+}
+
+.top-banner .swiper-slide img{
+	width: 100%;
+	height: 4.933333rem;
+}
+
+.top-menu{
+	overflow: hidden;
+	background: #FFF;
+	height: 2.986667rem;
+}
+
+.top-menu .top-menu-main{
+	
+}
+
+.top-menu .top-menu-main li{
+	width: 25%;
+	text-align: center;
+	float: left;
+}
+
+.top-menu .top-menu-main .menu-link{
+	display: block;
+	text-align: center;
+	height: 1.933333rem;
+	line-height: 1.933333rem;
+}
+
+.top-menu .top-menu-main .menu-link span{
+	font-size: 0.373333rem;
+	color: #5b5b5b;
+}
+
+.top-menu .top-menu-main .menu-link:after{
+	content: '';
+	display: inline-block;
+	background: url('../img/top_menu_sprite.png') no-repeat;
+	vertical-align: middle;
+}
+
+.top-menu .top-menu-main .menu-link.ml1:after{
+	background-position: -0.933333rem -0.213333rem;
+	width: 0.733333rem;
+	height: 0.76rem;
+}
+.top-menu .top-menu-main .menu-link.ml2:after{
+	background-position: -3.44rem -0.173333rem;
+	width: 0.613333rem;
+	height: 0.746667rem;
+}
+.top-menu .top-menu-main .menu-link.ml3:after{
+	background-position: -5.746667rem -0.2rem;
+	width: 0.986667rem;
+	height: 0.733333rem;
+}
+.top-menu .top-menu-main .menu-link.ml4:after{
+	background-position: -8.373333rem -0.12rem;
+	width: 0.84rem;
+	height: 0.826667rem;
+}
