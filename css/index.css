@@ -256,3 +256,75 @@ body{
 	top: 0.146667rem;
 	background: #e2b24d;
 }
+
+.gw-radio{
+	position: relative;
+	width: 100%;
+	height: 5.6rem;
+}
+
+.gw-radio .gwr-cover{
+	width: 100%;
+	height: 100%;
+}
+
+.gw-radio .gwr-mask{
+	background: linear-gradient(0deg,rgba(0,0,0,.65),transparent);
+    height: 1.066667rem;
+    line-height: 1.066667rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.gw-radio .gwr-note{
+	height: 1.066667rem;
+    line-height: 1.066667rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	font-size: 0.4rem;
+    color: #FFF;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-indent: 1.2rem;
+    background: url('../img/icons/note-mark.png') no-repeat 0.36rem center;
+    background-size: 0.64rem 0.426667rem;
+}
+
+.gw-radio .play-mask{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background: url('../img/video-play-bt.png') no-repeat center center;
+	background-size: 1.933333rem 1.933333rem; 
+}
+
+.gw-radio .gwr-msg{
+	position: absolute;
+	right: 0.08rem;
+	top: 0.333333rem;
+	height: 0.64rem;
+	line-height: 0.64rem;
+	padding-left: 0.213333rem;
+	padding-right: 0.213333rem;
+	border-radius: 0.213333rem;
+	font-size: 0.266667rem;
+	color: #fff;
+	background: rgba(0,0,0,0.5);
+}
+
+.gw-radio .gwr-msg .eye_mark{
+	display: inline-block;
+	width: 0.6rem;
+	height: 0.28rem;
+	vertical-align: middle;
+	background: url('../img/icons/is_eyes.png') no-repeat 0.133333rem center;
+	background-size: 0.493333rem 0.28rem;
+	border-left: 1px solid #FFF;
+}
