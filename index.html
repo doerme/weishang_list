@@ -92,7 +92,47 @@
 					<span class="times">1780次</span>
 				</div>
 			</div>
-			
+			<div class="gw-list">
+				<!-- Swiper -->
+			    <div class="swiper-container gw-list-swiper">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide good-block">
+			            	<img class="gwl-cover" src="./img/goods_eg.jpg" alt="" />
+			            	<div class="gwl-title">天然维生素</div>
+			            	<div class="gwl-price">￥ 128.9</div>
+			            </div>
+			            <div class="swiper-slide good-block">
+			            	<img class="gwl-cover" src="./img/goods_eg.jpg" alt="" />
+			            	<div class="gwl-title">天然维生素</div>
+			            	<div class="gwl-price">￥ 128.9</div>
+			            	<img class="gwl-pre-show" src="./img/pre_show_mask.png" alt="">
+			            </div>
+			            <div class="swiper-slide good-block">
+			            	<img class="gwl-cover" src="./img/goods_eg.jpg" alt="" />
+			            	<div class="gwl-title">天然维生素</div>
+			            	<div class="gwl-price">￥ 128.9</div>
+			            	<div class="gwl-warn">库存紧张</div>
+			            </div>
+			            <div class="swiper-slide good-block">
+			            	<img class="gwl-cover" src="./img/goods_eg.jpg" alt="" />
+			            	<div class="gwl-title">天然维生素</div>
+			            	<div class="gwl-disprice"><span class="dib yes">1元换购</span><span class="dib not">￥636.40</span></div>
+			            </div>
+			            <div class="swiper-slide good-block">
+			            	<img class="gwl-cover" src="./img/goods_eg.jpg" alt="" />
+			            	<div class="gwl-title">天然维生素</div>
+			            	<div class="gwl-price">￥ 128.9</div>
+			            </div>
+			            <div class="swiper-slide good-block">
+			            	<img class="gwl-cover" src="./img/goods_eg.jpg" alt="" />
+			            	<div class="gwl-title">天然维生素</div>
+			            	<div class="gwl-price">￥ 128.9</div>
+			            </div>
+			        </div>
+			        <!-- Add Pagination -->
+			        <div class="swiper-pagination"></div>
+			    </div>
+			</div>
 		</div>
 		<!-- 商品展示end -->
 
@@ -114,6 +154,13 @@
 	        paginationClickable: true,
 	        spaceBetween: 30
 	    });
+
+	    var gwListSwiper = new Swiper('.gw-list-swiper', {
+	    	pagination: '.swiper-pagination',
+	        slidesPerView: 'auto',
+	        paginationClickable: true,
+	        spaceBetween: 30
+	    }); 
 
 	    daojishi()
 	})
